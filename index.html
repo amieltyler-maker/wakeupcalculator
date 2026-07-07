@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wake-Up Calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <p class="eyebrow">Reverse Alarm Clock</p>
+      <h1>Wake-Up Calculator</h1>
+      <p class="subhead">Never oversleep or rush out the door again — get the exact wake-up time you need, down to the minute.</p>
+    </header>
+
+    <section class="hero" id="hero">
+      <div class="hero-gauge" id="gauge">
+        <div class="hero-time" id="wakeTimeDisplay">--:--</div>
+        <div class="hero-meta" id="wakeMeta">Fill in your morning below to see your wake time</div>
+      </div>
+      <div class="hero-actions">
+        <button class="btn btn-primary" id="armBtn">Arm alarm</button>
+        <div class="countdown" id="countdown"></div>
+      </div>
+      <div class="alarm-panel" id="alarmPanel" hidden>
+        <p class="alarm-message">WAKE UP</p>
+        <div class="alarm-buttons">
+          <button class="btn btn-ghost" id="snoozeBtn">Snooze 5 min</button>
+          <button class="btn btn-primary" id="stopBtn">Stop alarm</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Arrival</h2>
+      <div class="field-row">
+        <label for="jobStart">I need to arrive by</label>
+        <input type="time" id="jobStart" />
+      </div>
+      <div class="field-row">
+        <label for="driveMinutes">Drive / commute time (minutes)</label>
+        <input type="number" id="driveMinutes" min="0" value="20" />
+      </div>
+      <div class="leave-by" id="leaveByRow"></div>
+    </section>
+
+    <section class="card">
+      <div class="card-header-row">
+        <h2>Morning routine</h2>
+        <button class="btn btn-ghost" id="addItemBtn">+ Add step</button>
+      </div>
+      <p class="card-hint">Listed in the order you do them. Each row shows what time you need to start it.</p>
+      <ul class="ledger" id="ledgerList"></ul>
+    </section>
+
+    <footer class="app-footer">
+      <p>Keep this tab open for the alarm to sound — a browser tab can't wake a locked phone the way a native alarm app can. Your setup is saved automatically on this device.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
